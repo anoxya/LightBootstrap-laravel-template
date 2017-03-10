@@ -57,6 +57,18 @@
                         <p>Notifications</p>
                     </a>
                 </li>
+                <li {{Route::is('login')?' class=active':'' }}>
+                    <a href="{{route('login')}}">
+                        <i class="pe-7s-users"></i>
+                        <p>Login</p>
+                    </a>
+                </li>
+                <li {{Route::is('register')?' class=active':'' }}>
+                    <a href="{{route('register')}}">
+                        <i class="pe-7s-users"></i>
+                        <p>Register</p>
+                    </a>
+                </li>
                 <li class="active-pro">
                     <a href="{{route('upgrade')}}">
                         <i class="pe-7s-rocket"></i>
