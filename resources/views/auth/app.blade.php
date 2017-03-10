@@ -13,7 +13,7 @@
     @section('css')
         {{Html::style('css/app.css')}}
         {{Html::style('light/css/animate.min.css')}}
-        {{Html::style('light/css/light-bootstrap-dashboard.css')}}
+        {{Html::style('light/pro/light-bootstrap-dashboard.css')}}
         {{Html::style('light/css/demo.css')}}
 
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -27,22 +27,9 @@
 </head>
 <body>
 
-<div class="wrapper">
-    @include('partials.sidebar')
 
-    <div class="main-panel">
-        
-        @include('partials.header')
+@yield('contents')
 
-
-        <div class="content">
-            @yield('contents')
-        </div>
-
-        @include('partials.footer')
-
-    </div>
-</div>
 
 
 </body>
@@ -53,12 +40,21 @@
         {{Html::script('light/js/bootstrap-checkbox-radio-switch.js')}}
         {{Html::script('light/js/chartist.min.js')}}
         {{Html::script('light/js/bootstrap-notify.js')}}
-        {{Html::script('light/js/light-bootstrap-dashboard.js')}}
+        {{Html::script('light/pro/light-bootstrap-dashboard.js')}}
         {{Html::script('light/js/demo.js')}}
 
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&sensor=false"></script>
-
         @yield('extra-script')
+
+        <script type="text/javascript">
+        $().ready(function(){
+            lbd.checkFullPageBackgroundImage();
+            
+            setTimeout(function(){
+                // after 1000 ms we add the class animated to the login/register card
+                $('.card').removeClass('card-hidden');
+            }, 700)
+        });
+    </script>
 
     @show
 
