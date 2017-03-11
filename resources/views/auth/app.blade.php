@@ -31,7 +31,6 @@
 @yield('contents')
 
 
-
 </body>
     
     @section('script')
