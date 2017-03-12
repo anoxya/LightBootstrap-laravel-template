@@ -58,11 +58,22 @@
                                 <li><a href="#">Separated link</a></li>
                               </ul>
                         </li>
-                        <li>
-                            <a href="#">
-                                Log out
-                            </a>
-                        </li>
+                         @if (Auth::guest())
+                                <li><a href="{{ route('login') }}">Login</a></li>
+                                <li><a href="{{ route('register') }}">Register</a></li>
+                        @else
+                            <li><a>{{ Auth::user()->name }}</a></li>
+                            <li>
+                                    <a href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                        Log out
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
+                                    </form>
+                            </li>
+                        @endif    
                     </ul>
                 </div>
             </div>
