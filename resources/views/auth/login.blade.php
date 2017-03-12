@@ -59,11 +59,13 @@
                                         <label class="checkbox">
                                             <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
                                             Remember Me
-                                        </label>    
+                                        </label>
+
                                     </div>
                                 </div>
                                 <div class="footer text-center">
-                                    <button type="submit" class="btn btn-fill btn-warning btn-wd">Login</button>
+                                    <button type="submit" class="btn btn-fill btn-warning btn-wd">Login</button><br>
+                                    <a href="{{ route('password.request') }}">I forgot my password</a>    
                                 </div>
                             </div>
                                 
